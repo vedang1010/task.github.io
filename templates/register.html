@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+</head>
+<body>
+    <h3>Register Form</h3>
+    <hr/>
+    {% comment %} <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" />
+    </form> {% endcomment %}
+    <form class="container mt-4" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="form-group col-md-12">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="form-group col-md-6">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="form-group col-md-6">
+                <label>Email Id</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email Id">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Contact Number</label>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number">
+            </div>
+        </div>
+    
+        <div class="row mt-4">
+            <div class="form-group col-md-6">
+                <label>Gender</label>
+                <div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="custom-control-input" name="gender" id="male" value="Male">
+                    <label for="male" class="custom-control-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="custom-control-input" name="gender" id="female" value="Female">
+                    <label for="female" class="custom-control-label">Female</label>
+                </div>
+            </div>
+            </div>
+            {% comment %} <div class="form-group col-md-6">
+                <label>Profile Picture</label>
+                <input type="file" class="form-control" name="image" id="image" placeholder="Enter Last Name">
+            </div> {% endcomment %}
+        </div>
+        <br>
+    <input type="submit" value="Submit" class="btn" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+    </form>
+</body>
+</html>

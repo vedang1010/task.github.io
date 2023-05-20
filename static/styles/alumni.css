@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: metropolis;
+    src: url(../fonts/Metropolis-Bold.ttf);
+}
+
+@font-face {
+    font-family: league_spartan;
+    src: url(../fonts/LeagueSpartan-Bold.ttf);
+}
+
+@font-face {
+    font-family: metropolis-regular;
+    src: url(../fonts/Metropolis-Regular.ttf);
+}
+
+.l-container {
+    /* top: 50px; */
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-gap: 0px;
+    padding-bottom: 88px;
+    padding-top: 30px;
+    height: 100%;
+    /* width: 100%; */
+    /* background-attachment: fixed; */
+
+    align-items: center;
+    justify-content: center;
+    /* background-image: url("images\bg.jpg"); */
+    /* max-width: 1200px; */
+    /* padding: 30px; */
+}
+
+.box {
+    display: grid;
+    gap: 70px;
+    /* justify-content: center; */
+    grid-template-columns: auto auto;
+}
+
+.box1 {
+    display: grid;
+    justify-content: center;
+    height: 23rem;
+    margin-bottom: 2rem;
+}
+
+.box3 {
+
+    height: 32rem;
+}
+
+.box4 {
+
+    height: 40rem;
+}
+
+.box2 {
+    display: grid;
+    justify-content: center;
+    height: 22rem;
+    /* margin-bottom: 5rem; */
+}
+
+.box5 {
+    display: grid;
+    justify-content: center;
+    height:23rem;
+    margin-bottom: 10.5rem;
+}
+
+
+
+.box2 .b-game-card .child {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #d8d8d8 0%, #e5e5e5 8%, #d4d4d4 30%, #cecece 40%, transparent 80%),
+        radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #d8d8d8 8%, #e5e5e5 25%, #cecece 62.5%, #797979 100%);
+
+}
+
+.b-game-card {
+    position: relative;
+    z-index: 1;
+    /* width: 100%; */
+    width: 500px;
+    height: 350px;
+    /* padding-bottom: 150%; */
+    perspective: 800px;
+    background-image: url("/static/images/alumni/sponsor2.png");
+}
+
+/* 
+.box2 .b-game-card{
+    height: 400px;
+} */
+
+
+.box5 .b-game-card .child {
+    background: rgb(67, 61, 61);
+    background-image: url("/static/images/alumni/sponsorPt.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    text-align: center;
+    color: #610000;
+    
+}
+
+
+.box1 .b-game-card .child {
+    background: rgb(67, 61, 61);
+    /* background: linear-gradient(90deg, rgba(67, 61, 61) 0%, rgb(81, 78, 78) 25%, rgb(97, 94, 94) 50%, rgb(118, 112, 112) 75%, rgb(152, 147, 147) 100%); */
+    /* background: linear-gradient(315deg, #ffeb7d, #857101); */
+    /* background-image:url("images/sponsor2.png"); */
+    background-image: url("/static/images/alumni/sponsorAu-01.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* background: center; */
+    display: grid;
+    text-align: center;
+    color: #610000;
+}
+
+.box2 .b-game-card .child {
+    background: rgb(67, 61, 61);
+    /* background: linear-gradient(90deg, rgba(67, 61, 61) 0%, rgb(81, 78, 78) 25%, rgb(97, 94, 94) 50%, rgb(118, 112, 112) 75%, rgb(152, 147, 147) 100%); */
+    /* background: linear-gradient(315deg, #C0C0C0, #5d5c5c); */
+    background-image: url("/static/images/alumni/sponsorAg-03.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    text-align: center;
+    color: #333333;
+}
+
+.box3 .b-game-card .child {
+    /* background: radial-gradient(ellipse farthest-corner at right bottom, #343333 0%, #3e3d3d 8%, #d4d4d4 30%, #cecece 40%, transparent 80%), */
+    /* radial-gradient(ellipse farthest-corner at left top, #413e3e 100%, #494948 62.5%, #545352 25%, #777775 8%, #4f4d4a 0%); */
+
+    /* background: rgb(69, 41, 5); */
+    /* background: linear-gradient(0deg, rgba(69, 41, 5, 1) 0%, rgba(110, 59, 9, 1) 26%, rgba(169, 122, 69, 1) 69%, rgba(194, 155, 96, 1) 100%); */
+    display: grid;
+    /* background: linear-gradient(315deg, #a26f63, #6C541E); */
+    /* background: linear-gradient(315deg, #b87079, #662d33); */
+    background-image: url("/static/images/alumni/sponsorB-04.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #ffbf69;
+    /* justify-content: center; */
+    text-align: center;
+}
+
+.box4 .b-game-card .child {
+    /* background: radial-gradient(ellipse farthest-corner at right bottom, #343333 0%, #3e3d3d 8%, #d4d4d4 30%, #cecece 40%, transparent 80%), */
+    /* radial-gradient(ellipse farthest-corner at left top, #413e3e 100%, #494948 62.5%, #545352 25%, #777775 8%, #4f4d4a 0%); */
+
+    /* background: rgb(69, 41, 5); */
+    /* background: linear-gradient(0deg, rgba(69, 41, 5, 1) 0%, rgba(110, 59, 9, 1) 26%, rgba(169, 122, 69, 1) 69%, rgba(194, 155, 96, 1) 100%); */
+    display: grid;
+    /* background: linear-gradient(315deg, #a26f63, #6C541E); */
+    /* background: linear-gradient(315deg, #b87079, #662d33); */
+    background-image : url("/static/images/alumni/sponsorG-05.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* justify-content: center; */
+    text-align: center;
+    color: #cd9777;
+}
+
+
+
+.l-container .box1 .b-game-card .child span {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    z-index: 250;
+    /* align-items: center; */
+    text-align: center;
+    margin: 20px;
+}
+
+.child .alumni_list span {
+    z-index: 250;
+    font-size: 24px;
+    /* font-family:'Trebuchet MS', sans-serif; */
+    text-align: center;
+
+}
+
+.alumni_list {
+    z-index: 250;
+    font-size: 22px;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: 1.25rem 0rem 4.5rem;
+    line-height: 200%;
+}
+
+.box5 .alumni_list{
+    line-height: 0%;
+    /* margin: 0rem; */
+}
+
+.head {
+    text-transform: uppercase;
+    font-size: 31px;
+    font-weight: 900;
+    z-index: 250;
+    padding: 20px;
+    font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    /* margin-top: 2rem; */
+    margin-top: 2rem;
+}
+
+.container .title {
+    position: relative;
+    text-align: center;
+    font-size: 45px;
+    z-index: 90;
+    font-weight: 800;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: rgb(115 182 188);
+
+}
+
+.l-container .b-game-card .b-game-card__cover {
+    border-radius: 0 40px;
+}
+
+.b-game-card {
+    /* transform: translateX(-50px); */
+    /* animation: movement 4s ease-in infinite alternate-reverse ; */
+}
+
+/* @keyframes movement {
+    from{
+        transform: translateX(-70px);
+    }
+    to{
+        transform: translateX(70px);
+    }
+} */
+.box3 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 70px;
+}
+
+.box4 {
+    display: grid;
+    gap: 70px;
+    grid-template-columns: auto auto;
+}
+
+@media (max-width:1200px) {
+    .b-game-card {
+        width: 380px;
+        height: 300px;
+
+    }
+
+    .alumni_list {
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .head {
+        margin-top: 2px;
+        padding: 10px;
+        font-size: 20px;
+        padding-top: 1.5rem;
+    }
+
+}
+
+@media (max-width:850px) {
+
+    .l-container {
+        grid-gap: 0px;
+        padding-bottom: 250px;
+    }
+
+    .box1 .b-game-card .child,
+    .box2 .b-game-card .child {
+        width: 200%;
+    }
+
+    .box2 .b-game-card .child {
+        height: 100%;
+    }
+
+    .b-game-card {
+        width: 320px;
+        height: 320px;
+    }
+
+    .head {
+        margin-top: 1px;
+        padding: 15px;
+        font-size: 21px;
+    }
+
+    .box2 {
+        height: 18rem;
+        margin-bottom: 10rem;
+    }
+    .box1 {
+        height: 21rem;
+    }
+
+
+    .box3 {
+        height: 25rem;
+       
+    }
+
+    .box4 {
+        height: 31rem;
+        /* margin-bottom: 10rem; */
+    }
+
+    .b-game-card {
+        /* transform: translateX(-50px); */
+        /* animation: movement 2s ease-in-out infinite alternate-reverse ; */
+    }
+
+    .alumni_list {
+        line-height: 130%;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    span {
+        z-index: 250;
+        font-size: 30px;
+        font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+        font-weight: 30px;
+    }
+
+    .title {
+        font-size: 35px;
+        /* width: 80vw; */
+    }
+
+    .box {
+        gap: 40px;
+    }
+
+}
+
+@media (max-width:650px) {
+    .l-container {
+        grid-gap: 60px;
+        padding-bottom: 250px;
+    }
+
+    .box3 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        /* grid-gap: 300px; */
+        /* grid-gap:0; */
+        height: 103vh;
+        margin-bottom:20px;
+    }
+
+    .box3.b-game-card:nth-child(1) {
+        height: 60vh;
+    }
+
+    .box3.b-game-card:nth-child(2) {
+        height: 60vh;
+    }
+
+    .box1 {
+        height: 18rem;
+    }
+    /* .box1 .b-game-card .child,
+    .box2 .b-game-card .child {
+        width: 100%;
+        
+    } */
+    .box4 {
+        height: 43rem;
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 225px;
+        grid-template-rows: auto auto;
+    }
+
+    .box2 {
+        height: 250px;
+
+    }
+
+    .container .title {
+        font-size: 26px;
+    }
+
+    .box1 .b-game-card,
+    .box2 .b-game-card {
+        width: 320px;
+        height: 280px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+}
+
+
+.b-game-card {
+    cursor: pointer;
+    position: relative;
+    height: 0;
+    /* padding-bottom: 120%; */
+    --offset-multiplier: 4px;
+    transition: transform 0.6s ease;
+    --translate: 0;
+    transform: translate(var(--translate), var(--translate));
+}
+
+.b-game-card:hover {
+    --offset-multiplier: 6px;
+}
+
+.b-game-card:hover {
+    --translate: calc(-1px * (var(--cards) - 1));
+    transition: transform 0.3s ease;
+}
+
+
+
+.child {
+    position: absolute;
+    width: 100%;
+    /* height: fit-content; */
+    padding: 0 16px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    transition: inherit;
+    --translate: calc(var(--offset) * var(--offset-multiplier));
+    transform: translate(var(--translate), var(--translate));
+    z-index: 5;
+}
+
+
+.box1 .b-game-card .child,
+.box2 .b-game-card .child {
+    width: 100%;
+    height:auto;
+    
+}
+
+/* .child:nth-child(1) {
+    --offset: 0;
+    z-index: 4;
+    
+  }
+  .child:nth-child(2) {
+    --offset: 1;
+    z-index: 3;
+   
+  }
+  .child:nth-child(3) {
+    --offset: 2;
+    z-index: 2;
+    
+  }
+  .child:nth-child(4) {
+    --offset: 3;
+    z-index: 1;
+    
+  }
+  .child:nth-child(5) {
+    --offset: 4;
+    z-index: 0;
+    
+  } */

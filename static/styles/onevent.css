@@ -1,0 +1,18 @@
+.ename img{
+    border: 1px solid #000;
+    box-shadow: 0 4px 8px #000;
+    display: block;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1%;
+    margin-bottom: 5px;
+}
+
+.gform {
+    background: rgb(111, 143, 175,0.5);
+    max-width: 640px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    height: max-content;
+}

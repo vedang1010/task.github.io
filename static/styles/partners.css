@@ -1,0 +1,651 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: metropolis;
+    src: url(../fonts/Helvetica-Bold.ttf);
+}
+body {
+    /* margin: 0;
+    padding: 0;
+    height: 1000px; */
+    /* background-image: url(./static/images/bg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    font-size: 16px;
+    /* The image used */
+    background-color: #000000;
+    /* Used if the image is unavailable */
+    background-position: center;
+    /* Center the image */
+    /* Do not repeat the image */
+    height: 110vh;
+}
+
+
+.subContainer {
+
+    /* transform: translateY(20vh); */
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: rgb(198, 130, 130); */
+    gap: 20px;
+}
+
+.filterDiv {
+    /* float: left; */
+
+    line-height: 50px;
+    text-align: center;
+    margin: 20px;
+
+    display: none;
+
+    box-shadow: 1.5px 1.5px 40px black;
+    border-radius: 25px;
+    /* animation: animate 1s ease, movement 3s infinite ease alternate; */
+
+    /* Hidden by default */
+}
+
+
+.box{
+    position: relative;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    width: 304px;
+    min-width: 304px;
+    /* height: 300px; */
+    background: #111845a6;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(23, 32, 90);
+    border: 2px solid #2a3cad;
+    color: white;
+    padding: 20px;
+  }
+  
+  .box:before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background: rgba(255,255,255,0.1);
+    transition:0.5s;
+    pointer-events: none;
+  }
+  
+  .box:hover:before{
+    left:-50%;
+    transform: skewX(-5deg);
+  }
+  
+  
+  .box .content{
+    position:relative;
+    /* top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px; */
+    border:1px solid #f0a591;
+    padding:20px;
+    text-align:center;
+    box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+    
+  }
+  
+  .box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    
+  }
+  
+  .box span:nth-child(1)
+  {
+    transform:rotate(0deg);
+    left: -50%;
+}
+
+.box span:nth-child(2)
+{
+    transform:rotate(90deg);
+    top: -50%;
+  }
+  
+  .box span:nth-child(3)
+  {
+    transform:rotate(180deg);
+    left: 50%;
+  }
+  
+  .box span:nth-child(4)
+  {
+    transform:rotate(270deg);
+    top: 50%;
+  }
+  
+  .box span:before
+  {
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animateborder 8s linear infinite;
+  }
+  
+  @keyframes animateborder {
+    0% {
+    transform:scaleX(0);
+    /* width:100%; */
+    transform-origin: left;
+    }
+    50%
+    {
+    transform:scaleX(1);
+    /* width: 100%; */
+    transform-origin: left;
+    }
+    50.1%
+    {
+      transform:scaleX(1);
+    /* width: 100%; */
+    transform-origin: right;
+      
+    }
+    
+    100%
+    {
+      transform:scaleX(0);
+    /* width: 100%; */
+    transform-origin: right;
+      
+    }
+    
+    
+  }
+/* @keyframes movement {
+    from {
+        transform: translateX(-30px);
+    }
+
+    to {
+        transform: translateX(30px);
+    }
+} */
+
+/* @keyframes animate {
+    from {
+        scale: 0.5;
+    }
+
+    to {
+        scale: 1;
+    }
+} */
+
+/* .filterDiv img {
+    height: 30vh;
+    width: 40vh;
+    border-radius: 25px;
+} */
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subContainer .filterDiv img {
+    /* width: 100%; */
+    vertical-align: middle;
+    cursor: zoom-in;
+    transition: all 0.5s ease;
+}
+
+.subContainer .filterDiv:hover img {
+    /* transform: scale(1.1); */
+    box-shadow: 2px 2px 75px rgb(77, 69, 69);
+    /* animation: ved 1s infinite ease-in-out linear; */
+}
+.subContainer .filterDiv p {
+    display: none;
+    /* visibility: hidden; */
+    width: 100%;
+    background-color: #ffffff;
+    font-size: 20px;
+    height: 50px;
+}
+.subContainer .filterDiv:hover p {
+    display: block;
+    /* visibility: visible; */
+    position: relative;
+    /* padding: 20px; */
+    background-color: #ffffff;
+    /* transform: scale(1.1); */
+    /* transition: width 0s, height 0.5s ease; */
+    /* transition: all 0.5s ease; */
+    animation: open-down 0.8s linear ;
+}
+@keyframes open-down{
+    0%{
+        opacity: 0;
+        height: 0;
+    }
+    100%{
+        opacity: 1;
+        height: 50px;
+    }
+}
+
+.subContainer .filterDiv p a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+#myBtnContainer {
+    display: flex;
+    justify-content: center;
+    /* transform: translateY(5vh); */
+}
+
+#myBtnContainer .btn {
+    font-family: 'Bree Serif', serif;
+
+}
+
+@media (max-width:880px) {
+
+    .subContainer .filterDiv p {
+        display: block;
+        /* visibility: visible; */
+        position: relative;
+        background-color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    #myBtnContainer {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 23px;
+        grid-template-rows: auto auto auto;
+    }
+    #myBtnContainer .btn {
+        width: 310px;
+        border-radius: 15px;
+        height: 50px;
+    }
+    /* .show{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    } */
+
+}
+
+/* Add a dark background to the active button */
+#myBtnContainer button.active {
+    /* background-color: #47c95a ; */
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    /* color: rgb(22, 68, 5); */
+    color: linear-gradient(to top, #dfe9f3 0%, white 100%);;
+    /* transition: background-color 2s ease;
+*/
+    
+
+            background: linear-gradient(-45deg,red, blue);
+            background-size: 400% 400%;
+	        /* animation: blink-1 0.6s both, gradient 15s ease infinite; */
+            opacity: 1;
+            border: 2px dashed rgba(255,255,255,1); 
+            animation:  gradient 15s ease infinite;
+
+            /* height: 100vh; */           
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  
+#myBtnContainer .btnone {
+    /* background-color: #ffffff; */
+    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    opacity: 0.3;
+
+
+
+}
+
+
+
+
+
+  
+.btntwo {
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    opacity: 0.3;
+
+}
+
+.btnthr {
+    background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+    opacity: 0.3;
+
+
+
+
+}
+/* 
+#myBtnContainer button.active :hover {
+    background-color: aqua;
+
+
+} */
+
+
+#myBtnContainer button .btn :hover {
+    background-color: #116f70;
+
+}
+
+/* @keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+} */
+
+/* Style the buttons */
+.btn {
+    border: none;
+    width: 300px;
+    /* border-radius: 25px; */
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border: 2px solid #116f70;
+    ;
+    box-shadow: inset 0 0 0 0  #116f70;
+    ;
+    -webkit-transition: ease-out 0.1s;
+    -moz-transition: ease-out 0.1s;
+    transition: ease-out 1.6s;
+
+}
+.show{
+    /* display: grid;
+    grid-template-columns: auto auto auto auto; */
+    animation: animate 1s ease;
+
+}
+@keyframes animate {
+    from {
+        scale: 0.5;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+.btn:hover {
+    /* box-shadow: inset 0 0 200px 100px aqua; */
+    /* animation: shake 0.5s;
+    animation-iteration-count: infinite; */
+}
+.btn:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .btn:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  .btn:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
+  }
+.btn:nth-child(1){
+    border-radius: 15px 0 0 15px;
+}
+.btn:nth-child(3){
+    border-radius: 0 15px 15px 0;
+}
+.filterDiv img{
+    width: 220px;
+    height: 220px;
+}
+
+@media (max-width: 1000px) {
+
+    .full-img img {
+        /* transform: rotate(-20deg); */
+        width: 95%;
+        max-width: 450px;
+    }
+
+
+    /* @keyframes movement {
+        from {
+            transform: translateX(-20px);
+        }
+
+        to {
+            transform: translateX(20px);
+        }
+    } */
+}
+
+
+@media (max-width: 800px) {
+    .gallery .image {
+        width: calc(100% / 1.5);
+    }
+
+    /* .filterDiv img {
+        height: 30vh;
+        width: 40vh;
+        border-radius: 15px;
+    } */
+
+    .subContainer {
+        /* transform: translateY(10vh); */
+        padding: 0%;
+    }
+
+    header {
+        height: 30px;
+    }
+
+
+    .btn {
+        /* border: 2px solid #2856ec; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        text-align: center;
+        width: 55px;
+        border-radius: 15px;
+    }
+
+    body {
+        /* margin: 0;
+    padding: 0;*/
+        height: 900px;
+    }
+
+    .box {
+        width: 372px;
+        height: 372px;
+    }
+    .box .content{
+        padding: 20px 40px;
+
+    }
+.subContainer .filterDiv:hover p {
+animation: none;
+
+}
+
+
+@media (max-width: 700px) {
+
+    /* @keyframes movement {
+        from {
+            transform: translateX(-10px);
+        }
+
+        to {
+            transform: translateX(10px);
+        }
+    } */
+}
+
+
+@media (max-width: 600px) {
+
+
+    body {
+        /* margin: 0;
+        padding: 0;*/
+        height: 1050px;
+    }
+}
+
+
+@media (max-width:450px) {
+    body {
+        /* margin: 0;
+        padding: 0;*/
+        height: 910px;
+    }
+
+}
+}

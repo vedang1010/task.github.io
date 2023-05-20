@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pune Startup Fest'23</title>
+   {% block links %}{% endblock links %} {% block css %}{%endblock css %} {%block js %}{% endblock js %}
+    <style>
+      #loading-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #ccc;
+        z-index: 9999;
+      }
+      #loading-progress {
+        height: 100%;
+        background-color: #4caf50;
+        width: 0;
+        transition: width 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  {% block extra %} {% endblock extra %}
+  <body
+    data-home-page="Page-13"
+    data-home-page-title="Page 13"
+    class="u-body u-xl-mode"
+    style="background-color: #0c0624">
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+    <div
+      id="my-background"
+      style="
+        height: 100vh;
+        width: 100vw;
+        z-index: -99;
+        position: fixed;
+        filter: opacity(0.35);
+      "
+    ></div>
+    {% comment %} {% endcomment %}
+    <!-- NAVBAR START -->
+    <div
+      class="nav-bg"
+      style="margin-bottom: {% block top %}80px{% endblock top %}"
+    >
+      <div class="logo">
+        <a href="/main"
+          ><img
+            src="/static/images/navbarAndFooter/PSF + Marsh White1.png"
+            alt=""
+        /></a>
+      </div>
+    </div>
+    <input type="checkbox" id="burger-toggle" />
+    <label for="burger-toggle" class="burger-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+    <div class="menu">
+      <div class="menu-inner">
+        <ul class="menu-nav">
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="/main"
+              ><span>
+                <div>
+                  <i class="fa-solid fa-house" style="padding-right: 1rem"></i
+                  >Home
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./aboutus"
+              ><span>
+                <div>
+                  <i
+                    class="fa-regular fa-file-lines"
+                    style="padding-right: 1rem"
+                  ></i
+                  >About Us
+                </div>
+              </span></a
+            >
+          </li>
+          <!-- <li class="menu-nav-item"><a class="menu-nav-link" href="./partners"><span>
+                      <div ><i class="fa-solid fa-handshake" style="padding-right: 1rem;"></i>Present Partners
+                      </div>
+                  </span></a></li> -->
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./partners"
+              ><span>
+                <div>
+                  <i
+                    class="fa-regular fa-handshake"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Sponsors / Partners
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./startup_expo"
+              ><span>
+                <div>
+                  <i class="fa-solid fa-stairs" style="padding-right: 1rem"></i
+                  >Startup Expo
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./alumni"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-people-group"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Alumni
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item"><a class="menu-nav-link" href="./internship_portal"><span>
+            <div><i class="fa-regular fa-calendar-days" style="padding-right: 1rem;"></i>Internship Portal
+            </div>
+          </span></a></li>
+          {% comment %} <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./ongoing_events"
+              ><span>
+                <div>
+                  <i
+                    class="fa-regular fa-calendar-days"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Ongoing Sessions
+                </div>
+              </span></a
+            >
+          </li> {% endcomment %}
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./events.html"
+              ><span>
+                <div>
+                  <i
+                    class="fa-sharp fa-solid fa-puzzle-piece"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Events
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./investor"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-hand-holding-dollar"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Investors
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./visitorreg.php"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-shoe-prints"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Visitor Registration
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="/contact"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-envelope-open-text"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Contact Us
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="./team"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-user-group"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Team
+                </div>
+              </span></a
+            >
+          </li>
+          <li class="menu-nav-item">
+            {% comment %}
+            <a class="menu-nav-link" href="./team"
+              ><span>
+                <div>
+                  <i
+                    class="fa-solid fa-user-group"
+                    style="padding-right: 1rem"
+                  ></i
+                  >Team
+                </div>
+              </span></a
+            >
+            {% endcomment %}
+            <a href="/logout">Logout</a>
+          </li>
+          <li class="menu-nav-item">
+            <a class="menu-nav-link" href="#"
+              ><span>
+                <div>
+                  <center><i class="fa-solid fa-chevron-down"></i></center>
+                </div> </span
+            ></a>
+          </li>
+        </ul>
+        <div class="gallery">
+          <div class="title">
+            <p>PSF'22 Gallery</p>
+          </div>
+          <div class="images">
+            <a
+              class="image-link"
+              style="overflow-y: hidden; overflow-x: hidden"
+              href="#"
+            >
+              <div class="image" data-label="PSF'22 Gallery">
+                <img
+                  src="/static/images/navbarAndFooter/PSF'22_Gallery0.jpg"
+                  alt="Gallery"
+                />
+              </div>
+            </a>
+            <a
+              class="image-link"
+              style="overflow-y: hidden; overflow-x: hidden"
+              href="#"
+            >
+              <div class="image" data-label="PSF'22 Gallery">
+                <img
+                  src="/static/images/navbarAndFooter/PSF'22_Gallery1.jpg"
+                  alt="Our Gallery"
+                />
+              </div>
+            </a>
+            <a
+              class="image-link"
+              style="overflow-y: hidden; overflow-x: hidden"
+              href="#"
+            >
+              <div class="image" data-label="PSF'22 Gallery">
+                <img
+                  src="/static/images/navbarAndFooter/PSF'22_Gallery2.jpg"
+                  alt="Our Gallery"
+                />
+              </div>
+            </a>
+            <a
+              class="image-link"
+              style="overflow-y: hidden; overflow-x: hidden"
+              href="#"
+            >
+              <div class="image" data-label="PSF'22 Gallery">
+                <img
+                  src="/static/images/navbarAndFooter/PSF'22_Gallery3.jpg"
+                  alt="Our Gallery"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} {% endcomment %}
+    <!-- NAVBAR END -->
+    {% block body %}{% endblock body %}
+
+    <!-- FOOTER START -->
+    <footer class="footer-section" style="overflow-x: visible; display: block">
+      <div
+        class="container"
+        style="
+          padding-left: -65px;
+          max-width: 90%;
+          overflow-x: visible;
+          max-height: none;
+        "
+      >
+        <div class="footer-cta pt-5 pb-5" style="overflow-x: visible">
+          <div class="row" style="overflow-x: visible">
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta p-2">
+                <a href="https://goo.gl/maps/8NBMTPuq9N3V4dw1A" target="_blank"
+                  ><i class="fas fa-map-marker-alt"></i
+                ></a>
+                <div class="cta-text">
+                  <h4 style="overflow-x: visible">
+                    <a
+                      href="https://goo.gl/maps/8NBMTPuq9N3V4dw1A"
+                      target="_blank"
+                      >Find us</a
+                    >
+                  </h4>
+                  <!-- <span>1010 Avenue, sw 54321, chandigarh</span> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta p-2">
+                <a href="https://wa.me/qr/PDT3YMXZ5NXIB1" target="_blank"
+                  ><i class="fas fa-phone"></i
+                ></a>
+                <div class="cta-text">
+                  <h4 style="overflow-x: visible">
+                    <a href="https://wa.me/qr/PDT3YMXZ5NXIB1" target="_blank"
+                      >Call us</a
+                    >
+                  </h4>
+                  <!-- <span>9876543210 0</span> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta p-2">
+                <a href="mailto:queries.psf@gmail.com" target="_blank"
+                  ><i class="far fa-envelope-open"></i
+                ></a>
+                <div class="cta-text">
+                  <h4 style="overflow-x: visible">
+                    <a href="mailto:queries.psf@gmail.com" target="_blank"
+                      >Mail us</a
+                    >
+                  </h4>
+                  <!-- <span>mail@info.com</span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-content pt-5" style="overflow-x: visible">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 mb-50" style="width: 100%">
+              <div class="footer-widget">
+                <!-- <div class="footer-logo">
+                              <a href="index"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                          </div> -->
+                <!-- <div class="footer-text">
+                              <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                              elit,Lorem ipsum dolor sit amet.</p>
+                          </div> -->
+                <div class="img" style="overflow-x: visible">
+                  <img
+                    src="/static/images/navbarAndFooter/PSF Logo White with theme.png"
+                    alt=""
+                    style="overflow-x: visible"
+                  />
+                </div>
+                <div class="follow" style="overflow-x: visible">
+                  <p class="follow-us">Follow Us</p>
+                  <div class="wrapper" style="overflow-x: visible">
+                    <a
+                      href="https://tinyurl.com/biec-facebook"
+                      target="_blank"
+                      class="icon facebook"
+                    >
+                      <!-- <div class="tooltip">Facebook</div> -->
+                      <span><i class="fab fa-facebook-f"></i></span>
+                    </a>
+                    <a
+                      href="https://tinyurl.com/biec-twitter"
+                      target="_blank"
+                      class="icon twitter"
+                    >
+                      <!-- <div class="tooltip">Twitter</div> -->
+                      <span><i class="fab fa-twitter"></i></span>
+                    </a>
+                    <a
+                      href="https://instagram.com/biec_coep?igshid=Yzg5MTU1MDY="
+                      target="_blank"
+                      class="icon instagram"
+                    >
+                      <!-- <div class="tooltip">Instagram</div> -->
+                      <span><i class="fab fa-instagram"></i></span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/pune-startup-fest/"
+                      target="_blank"
+                      class="icon linkedin"
+                    >
+                      <!-- <div class="tooltip">Github</div> -->
+                      <span><i class="fab fa-linkedin"></i></span>
+                    </a>
+                    <a
+                      href="https://tinyurl.com/biec-youtube"
+                      target="_blank"
+                      class="icon youtube"
+                    >
+                      <!-- <div class="tooltip">Youtube</div> -->
+                      <span><i class="fab fa-youtube"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xl-8 col-lg-8 col-md-12 mb-30"
+              style="overflow-x: visible"
+            >
+              <div class="footer-widget">
+                <div class="cards" style="overflow-x: visible">
+                  <div
+                    class="cardFooter card-1"
+                    style="overflow-x: visible; padding: 1rem"
+                  >
+                    <span
+                      class="style"
+                      style="overflow-x: visible; text-align: center"
+                      >Dr. Vidya More</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        font-size: small;
+                        padding-top: 3px;
+                        text-align: center;
+                      "
+                      >Faculty Advisor,</span
+                    >
+                    <span class="style2">BHAU's I & E-cell</span>
+                    <span
+                      class="style2"
+                      style="
+                        overflow-x: visible;
+                        font-size: smaller;
+                        text-align: center;
+                      "
+                      ><a href="mailto:vnm.extc@coep.ac.in"
+                        >vnm.extc@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                  <div class="cardFooter card-2" style="overflow-x: visible">
+                    <span
+                      class="style"
+                      style="overflow-x: visible; text-align: center"
+                      >Dr. Rahul Adhao</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        overflow-x: visible;
+                        font-size: small;
+                        padding-top: 3px;
+                        text-align: center;
+                      "
+                      >Faculty Advisor,</span
+                    >
+                    <span class="style2">BHAU's I & E-cell</span>
+                    <span
+                      class="style2"
+                      style="
+                        overflow-x: visible;
+                        font-size: smaller;
+                        text-align: center;
+                      "
+                      ><a href="mailto:rba.comp@coep.ac.in"
+                        >rba.comp@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                  <div class="cardFooter card-3" style="overflow-x: visible">
+                    <span
+                      class="style"
+                      style="overflow-x: visible; text-align: center"
+                      >Gaurav Pande</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        font-size: small;
+                        padding-top: 3px;
+                        text-align: center;
+                      "
+                      >Secretary,</span
+                    >
+                    <span class="style2">BHAU's I & E-cell</span>
+                    <span
+                      class="style2"
+                      style="
+                        overflow-x: visible;
+                        text-align: center;
+                        font-size: smaller;
+                      "
+                      ><a href="mailto:secretary.psf@coep.ac.in"
+                        >secretary.psf@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                  <div class="cardFooter card-4" style="overflow-x: visible">
+                    <span class="style" style="overflow-x: visible"
+                      >Mohit Panpaliya</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        font-size: small;
+                        padding-top: 6px;
+                        text-align: center;
+                      "
+                      >Finance & Marketing Executive,</span
+                    >
+                    <!-- <span class="style2">BHAU's I & E-cell</span> -->
+                    <span
+                      class="style3"
+                      style="
+                        overflow-x: visible;
+                        font-size: smaller;
+                        text-align: center;
+                      "
+                      ><a href="mailto:finance.psf@coep.ac.in"
+                        >finance.psf@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                  <div class="cardFooter card-5" style="overflow-x: visible">
+                    <span
+                      class="style"
+                      style="overflow-x: visible; text-align: center"
+                      >Om Adlawar</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        font-size: small;
+                        padding-top: 6px;
+                        text-align: center;
+                      "
+                      >Investor Relations Executive,</span
+                    >
+                    <!-- <span class="style2">BHAU's I & E-cell</span> -->
+                    <span
+                      class="style3"
+                      style="
+                        overflow-x: visible;
+                        font-size: smaller;
+                        text-align: center;
+                      "
+                      ><a href="mailto:ir.psf@coep.ac.in"
+                        >ir.psf@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                  <div class="cardFooter card-1" style="overflow-x: visible">
+                    <span
+                      class="style"
+                      style="overflow-x: visible; text-align: center"
+                      >Pranali Mahavarkar</span
+                    >
+                    <span
+                      class="style1"
+                      style="
+                        font-size: small;
+                        padding-top: 6px;
+                        text-align: center;
+                      "
+                      >Events & Networking Executive,</span
+                    >
+                    <!-- <span class="style2">BHAU's I & E-cell</span> -->
+                    <span
+                      class="style3"
+                      style="
+                        overflow-x: visible;
+                        font-size: smaller;
+                        text-align: center;
+                      "
+                      ><a href="mailto:events.psf@coep.ac.in"
+                        >events.psf@coep.ac.in</a
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+              <div class="copyright-text">
+                <p>Copyright &copy; 2023, All Right Reserved</p>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 d-none d-lg-block">
+              <div
+                class="footer-menu"
+                style="width: max-content; margin-right: 50px"
+              >
+                <ul>
+                  <li><a href="/main">Home</a></li>
+                  <li><a href="/aboutus">About Us</a></li>
+                  <li><a href="/investor">Investors</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="design" style="background: aqua">
+        <p>Designed by Web Team</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script src="/static/js/play.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+    <script>
+      VANTA.WAVES({
+        el: "#my-background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    {% comment %} {% endcomment %}
+    <script>
+      window.addEventListener("load", function () {
+        const progressBar = document.getElementById("loading-progress");
+        let width = 0;
+        const interval = setInterval(function () {
+          width += Math.floor(Math.random() * 10);
+          progressBar.style.width = width + "%";
+          if (width >= 100) {
+            clearInterval(interval);
+            progressBar.style.width = "100%";
+            setTimeout(function () {
+              const loadingBar = document.getElementById("loading-bar");
+              loadingBar.style.opacity = "0";
+              setTimeout(function () {
+                loadingBar.parentNode.removeChild(loadingBar);
+              }, 500);
+            }, 500);
+          }
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

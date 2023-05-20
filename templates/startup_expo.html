@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+
+{% block links %}
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="shortcut icon" href="/static/images/navbarAndFooter/PSF + Marsh White1.png">
+<link href="https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+{% endblock links %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles/startup.css">
+  <link rel="stylesheet" href="/static/styles/footer.css">
+  <link rel="stylesheet" href="/static/styles/navbar.css">
+ {% endblock css %}
+  {%block js %}
+  <style>
+    @media screen and (max-width:480px) {
+      #about1 {
+        margin-top: 70px;
+      }
+    }
+  
+    .view-more {
+      position: relative;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      text-decoration: none;
+    }
+  
+    .view-more p {
+      text-decoration: none;
+      font-size: 15px;
+      font-family: 'Fredoka One', cursive;
+      margin: 0;
+    }
+  
+    .custom-btn {
+      width: 150px;
+      height: 50px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+      outline: none;
+    }
+  
+    .btn-view {
+      border: none;
+      background: rgb(251, 33, 117);
+      background: linear-gradient(0deg, rgba(251, 33, 117, 1) 0%, rgba(234, 76, 137, 1) 100%);
+      color: #fff;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .3),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+    }
+  
+    .btn-view:hover {
+      text-decoration: none;
+      scale: 1.1;
+    }
+  </style>
+  <script src="/static/js/play.js"></script>
+  
+{% endblock js %}
+
+{% block extra %}
+
+{% endblock extra %}
+
+
+{% block body %}
+  <!--start About Us-->
+  <div class="about-us">
+    <div class="text" data-aos="fade-up">
+      <h2 class="top" id="about1" style="font-family: league_spartan; color: aqua;">ABOUT</h2>
+      <p class="se" style="font-family: league_spartan; color: whitesmoke;">STARTUP EXPO</p>
+      <hr>
+      <p style="font-family: metropolis; text-align: left;">The Startup Expo is one of the key highlights of Pune
+        Startup Fest. The Expo
+        is
+        aimed at providing
+        entrepreneurs a high visibility transformative platform where they can showcase their ventures, meet
+        investors, engage with government organizations, attend knowledge sessions, receive one-on-one
+        mentoring, network with business experts, explore partnership opportunities, find potential
+        customers and interact with students and stakeholders that can help them scale new heights. It
+        serves as a great medium of interaction between the founders and students, thus promoting a thriving
+        entrepreneurial culture. The Startups also recruit these young innovators who look out for new
+        opportunities.</p>
+    </div>
+    <div class="image-container" style="filter: drop-shadow(8px 8px 10px rgb(5, 3, 3));" data-aos="fade-up">
+      <div class="image image1">
+        <img src="/static/images/startupExpo/PSF'22_Gallery3.jpg" alt="Image">
+
+      </div>
+      <!-- <div class="image image2">
+                    <img src="/S2.png" alt="Image">
+                </div> -->
+    </div>
+  </div>
+  <!--End About Us-->
+  <!--start Main-->
+  <div class="main">
+    <div class="box-model">
+      <!-- <i class="fas fa-times fa-2x close"></i> -->
+      <div class="box-image-container">
+        <div class="box-image">
+          <img src="" alt="Image">
+        </div>
+      </div>
+    </div>
+    <div class="main-image-container">
+      <div class="image active" data-aos="zoom-in">
+        <img src="/static/images/startupExpo/PSF'22_Gallery1.jpg" alt="Image">
+      </div>
+      <div class="image" data-aos="zoom-in">
+        <img src="/static/images/startupExpo/PSF'22_Gallery2.jpg" alt="Image">
+      </div>
+      <div class="image" data-aos="zoom-in">
+        <img src="/static/images/startupExpo/PSF img 1.jpg" alt="Image">
+      </div>
+      <div class="image" data-aos="zoom-in">
+        <img src="/static/images/startupExpo/PSF img 2.jpg" alt="Image">
+      </div>
+    </div>
+    <div class="text" data-aos="fade-up">
+      <h2 class="key1" style="font-family: league_spartan; font-size: 50px; color: aqua;">KEY HIGHLIGHTS</h2>
+      <h3 class="key2" style="color: #ebd9eb; font-family: league_spartan; font-size: 60px; color: whitesmoke;">STARTUP
+        EXPO</h3>
+      <hr>
+      <ul style="text-align: left;">
+        <li>
+          <p style="font-family: metropolis;">&#8594; 100 startup exhibitors from various sectors in hybrid mode.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; 20 startup exhibits in offline mode.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; A footfall of over 3000 people.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; More than 75 investors, mentors, and industry experts.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; A prize pool of Rs. 70,000 was awarded for 7 competitions
+            organised during PSF'22.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; A dedicated "Student Startup Zone" for enabling opportunities for
+            young entrepreneurs.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; "Student Internships" - to help students find internships in
+            startups.</p>
+        </li>
+        <li>
+          <p style="font-family: metropolis;">&#8594; Rs. 5.5 cr were invested into startups over the last 4 years.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--End Main-->
+  <center>
+    <div class="carding">
+      <div class="a" style="font-family: league_spartan;">
+        <h1 style="color: whitesmoke;">The Pitcher's Valley</h1>
+      </div>
+    </div>
+    <div class="pitchersValley-container" style="margin-bottom: 5%;">
+      <a href="./events/pitchersvalley">
+        <img src="/static/images/main/Pitcher's Valley Square.png" alt="" height="50%" width="50%">
+      </a>
+    </div>
+    <div class="view-more" style="margin-bottom: 5%;">
+      <a href="./events/pitchersvalley">
+        <button class="custom-btn btn-view">
+          <p>View Details</p>
+        </button>
+      </a>
+    </div> -->
+  </center>
+  <section>
+    <!-- StartUp Zones -->
+    <div class="carding">
+      <div class="a" style="font-family: league_spartan;">
+        <h1 style="color: whitesmoke;">STARTUP ZONES</h1>
+      </div>
+      <hr>
+
+      <div class="containerr" style="filter: drop-shadow(8px 8px 10px rgb(8, 6, 6));">
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>SOCIAL STARTUPS</h3>
+                <hr class="cardline">
+                <p>Features startups emphasizing on solution to a social problem to create change.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3> AGRO STARTUPS</h3>
+                <hr class="cardline">
+                <p>Features startups that help enhance traditional farming ways or develop new ones.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>TECHNICAL STARTUPS</h3>
+                <hr class="cardline">
+                <p>Features products and services of startups which leverages technology.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>HEALTH & LIFESTYLE STARTUPS</h3>
+                <hr class="cardline">
+                <p>Features startups that aim to rejuvenate human life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>STUDENT STARTUPS</h3>
+                <hr class="cardline">
+                <p>Features Young entrepeneurs striving to create a difference</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>GREEN STARTUPS</h3>
+                <hr class="cardline">
+                <p>Incubators, accelerators, financial institutions and coworking spaces.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>INNOVATION ZONE STARTUP</h3>
+                <hr class="cardline">
+                <p>Featuring creations of the innovators with IPR and/or patents with the sole aim of solving
+                  widespread problems</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in">
+          <div class="carrd">
+            <div class="box">
+              <div class="content">
+                <h3>EDUCATION ZONE STARTUP</h3>
+                <hr class="cardline">
+                <p>Features startups that aim to innovate and revolutionize the education sector.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- StartUp Zones -->
+  </section>
+
+
+  <!--start About Us-->
+  <div class="reservation">
+    <div class="text" data-aos="fade-right">
+      <h2 class="zone" style="font-family: league_spartan; color: aqua;">INVESTOR ZONE</h2>
+      <hr>
+      <p>Amalgamation of Investors/Mentors from different domains of works coming together to network, interact,
+        evaluate and mentor at Startup Expo sets up the premises of Investor Zone at Pune Startup Fest.
+        <br><br>
+        Despite the pandemic odds, Pune Startup Fest'22 was embraced with arms wide open as 75+ investors and mentors
+        visited the event in 2 days.
+        Their visit comprises thorough interaction with the Startups as per their domain of interest, leading to
+        mentorship and investment channels.
+        Over 5.5 crores of investment has been achieved in previous 4 editions of Pune Startup Fest and with the
+        association of esteemed ensemble of investors/mentors we are geared up to deliver the same for 5th edition of
+        Pune Startup Fest'23.
+        Investor Zone serves the Startups with agenda of " Pruning predicaments with words of sagacity and watering
+        worthy ideas with shower of greenbacks" in the process making it absolute centre of attraction.
+      </p>
+    </div>
+    <div class="image-container" data-aos="fade-up">
+      <div class="image image1">
+        <img
+          src="https://uschamber-co.imgix.net/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fco-assets%2Fassets%2Fimages%2Fpitching-investors_2021-08-16-223955_uvni.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.0825&fp-y=0.2205&h=415&q=88&w=622&s=2414200334f375415b91eb011897387d"
+          alt="Image">
+      </div>
+      <!-- <div class="image image2">
+                    <img src="https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988518/bacon-2.jpg"
+                        alt="Image">
+                </div> -->
+    </div>
+  </div>
+  <!--End About Us-->
+
+
+  <!-- Add your site or application content here -->
+  <script src="/staticjs/main.js"></script>
+  <script src="/staticjs/main.min.js"></script>
+
+  <!-- partial -->
+  <script src="/static/js/startup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+
+
+{% endblock body %}

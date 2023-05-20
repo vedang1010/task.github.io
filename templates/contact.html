@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% block links %}
+<link
+  rel="shortcut icon"
+  href="/static/images/navbarAndFooter/PSF + Marsh White1.png"
+/>
+<link rel="stylesheet" href="/static/styles/footer.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
+/>
+
+{% endblock links %} {% block css %}
+<link rel="stylesheet" type="text/css" href="/static/styles/contact.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/navbar.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/footer.css" />
+{% endblock css %} {%block js %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css"
+/>
+{% endblock js %} {% block extra %} {% endblock extra %} {% block body %}
+{% block top %}0px{% endblock top %}
+<h3 class="text-center text-success">
+  <?= $output ?>
+</h3>
+<form action="" method="post">
+  {% csrf_token %}
+  <script
+    src="https://kit.fontawesome.com/6fc46b33e7.js"
+    crossorigin="anonymous"
+  ></script>
+  <div class="backgroundForm">
+    <div class="formContainer">
+      <div class="screen">
+        <div class="form-body">
+          <div class="form-body-item formLeft">
+            <div class="app-title">
+              <span>CONTACT</span>
+              <span>US</span>
+              <!-- <img src="PSFb.png" class="psfimg"> -->
+            </div>
+            <img src="/static/images/navbarAndFooter/PSFb.png" class="psfimg" />
+
+            <div class="app-contact">
+              CONTACT INFO :
+              <a href="mailto:queries.psf@gmail.com">queries.psf@gmail.com</a>
+            </div>
+          </div>
+          <div class="form-body-item">
+            <div class="app-form">
+              <div class="app-form-group">
+                <input
+                  name="name"
+                  class="app-form-control"
+                  placeholder="NAME"
+                  value=""
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="app-form-group">
+                <input
+                  name="email"
+                  class="app-form-control"
+                  placeholder="EMAIL"
+                  type="email"
+                  required=""
+                />
+              </div>
+              <div class="app-form-group">
+                <input
+                  name="subject"
+                  class="app-form-control"
+                  placeholder="SUBJECT"
+                />
+              </div>
+              <div class="app-form-group message">
+                <textarea
+                  name="message"
+                  class="app-form-control"
+                  placeholder="Message"
+                  required=""
+                  spellcheck="false"
+                ></textarea>
+              </div>
+              <div class="app-form-group buttons">
+                <button class="app-form-button">CANCEL</button>
+                <button name="sendMailBtn" class="app-form-button">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock body %}
