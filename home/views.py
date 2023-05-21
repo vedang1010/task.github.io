@@ -11,8 +11,8 @@ import mysql.connector as sql
 from django.db import connection
 
 def index(request):
-    if not request.user.is_authenticated:
-        return redirect("/login")
+    # if not request.user.is_authenticated:
+    #     return redirect("/login")
     return render(request,"index.html")
 
 def main(request):
@@ -64,7 +64,7 @@ def loginUser(request):
         if t==():
             return render(request,'login.html')
         else:
-            return render(request,'index.html')
+            return redirect('/')
 
     return render(request,'login.html')
 
@@ -104,7 +104,8 @@ def register(request):
         c="insert into user values('{}','{}','{}','{}','{}','{}','{}')".format(un,fn,ln,el,gd,cn,pd)
         cursor.execute(c)
         m.commit()
-        return render(request,'login.html')
+        # return render(request,'login.html')
+        return redirect('login')
 
     return render(request, 'register.html')
 
@@ -227,21 +228,9 @@ def company_signup(request):
         k="insert into startups (username,email,company_name,first_name,last_name,password1,password2,phone,gender,image) values('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(a,b,c,d,e,f,g,h,j,i)
         cursor.execute(k)
         n.commit()
-        return render(request,'company_login.html')
+        return redirect('company_login')
         # return render(request, "company_login.html")
     return render(request, 'company_signup.html')
-
-# values.append((f2,l2,c2,))
-# print(values)
-# print(a1)
-# f2 = results[0]
-# l2 = results[1]
-# c2 = results[2]
-# e2 = results[3]
-# p2 = results[4]
-# i2 = results[5]
-# g2 = results[6]
-
 
 def company_homepage(request):
     for key,value in d1.items():
@@ -250,6 +239,51 @@ def company_homepage(request):
 
     return render(request,'company_homepage.html',{'username': a1, 'company': c2,'firstname':f2,'lastname':l2,'email':e2,'phone':p2,'gender':g2,'img':i2})
 
+aj1=''
+aj2=''
+aj3=''
+aj4=''
+aj5=''
+aj6=''
+aj7=''
+aj8=''
+def add_job(request):
+    global aj1,aj2,aj3,aj4,aj5,aj6,aj7,aj8
+    if request.method == "POST":
+        n=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
+        cursor=n.cursor()
+        x=request.POST
+        for key,value in x.items():
+            if key=="job_title":
+                aj1=value
+            if key=="start_date":
+                aj2=value
+            if key=="end_date":
+                aj3=value
+            if key=="experience":
+                aj4=value
+            if key=="salary":
+                aj5=value
+            if key=="skills":
+                aj6=value
+            if key=="location":
+                aj7=value
+            if key=="description":
+                aj8=value
+            # if key=="gender":
+            #     i=value
+            # if key=="image":
+            #     j=value
+            # if key=="status":
+            #     k=value
+
+
+        k="insert into add_job (job_title,start_date,end_date,experience,salary,skills,company_location,job_description) values('{}','{}','{}','{}','{}','{}','{}','{}')".format(aj1,aj2,aj3,aj4,aj5,aj6,aj7,aj8)
+        cursor.execute(k)
+        n.commit()
+        return render(request, 'add_job.html')
+        # return render(request, "company_login.html")
+    return render(request, 'add_job.html')
 
 def all_jobs(request):
     jobs = Job.objects.all().order_by('-start_date')
@@ -259,3 +293,9 @@ def all_jobs(request):
     for i in apply:
         data.append(i.job.id)
     return render(request, "all_jobs.html", {'jobs':jobs, 'data':data})
+
+def job_list(request):
+    # companies = Company.objects.get(user=request.user)
+    # jobs = Job.objects.filter(company=companies)
+    return render(request, "job_list.html")
+    # return render(request, "job_list.html", {'jobs':jobs})

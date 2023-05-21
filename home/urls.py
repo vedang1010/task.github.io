@@ -22,5 +22,7 @@ urlpatterns = [
     path('company_login',views.company_login,name="company_login"),
     path('company_signup',views.company_signup,name="company_signup"),
     path('company_homepage',views.company_homepage,name="company_homepage"),
+    path('add_job',views.add_job,name="add_job"),
+    path('job_list',views.job_list,name="job_list"),
     path('internship_portal_user',views.internship_portal_user,name="internship_portal_user")
 ]
