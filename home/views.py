@@ -14,6 +14,10 @@ def index(request):
     # if not request.user.is_authenticated:
     #     return redirect("/login")
     return render(request,"index.html")
+def login(request):
+    # if not request.user.is_authenticated:
+    #     return redirect("/login")
+    return render(request,"login.html")
 
 def main(request):
     # if request.user.is_authenticated:
@@ -64,7 +68,7 @@ def loginUser(request):
         if t==():
             return render(request,'login.html')
         else:
-            return redirect('/')
+            return redirect('/index')
 
     return render(request,'login.html')
 

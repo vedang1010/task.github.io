@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.urls import include, path
 from home import views
 urlpatterns = [
-    path("",views.index,name='home'),
+    path("",views.login,name='home'),
+    path("index",views.index,name='index'),
     path("main",views.main,name='main'),
     path("aboutus",views.aboutus,name='aboutus'),
     path("startup_expo",views.startup_expo,name='startup_expo'),

@@ -10,6 +10,8 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
 />
+<link rel="stylesheet" type="text/css" href="/static/loader.css" />
+
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
@@ -43,6 +45,8 @@
 {% endblock css %} 
 {% block js %}
 <!-- js -->
+<script src="/static/js/loader.js">
+</script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <!-- js -->
 {% endblock js %} 
@@ -55,13 +59,28 @@
   <input type="radio" name="slider" id="item-3" />
   <div class="cards">
     <label class="card" for="item-1" id="song-1">
-      <img src="/static/images/main/Pitcher's Valley Square.png" alt="song" />
+      <div class="preloader">
+        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
+      </div>
+      <div class="content hidden" >
+      <img src="/static/images/main/Pitcher's Valley Square.png"  alt="song" />
+      </div>
     </label>
     <label class="card" for="item-2" id="song-2">
-      <img src="/static/images/main/Ad Boost square.png" alt="song" />
+      <div class="preloader">
+        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
+      </div>
+      <div class="content hidden">
+      <img src="/static/images/main/Ad Boost square.png"  alt="song" />
+      </div>
     </label>
     <label class="card" for="item-3" id="song-3">
-      <img src="/static/images/main/Ad Boost Square pg 2.png" alt="song" />
+      <div class="preloader">
+        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
+      </div>
+      <div class="content hidden">
+      <img src="/static/images/main/Ad Boost Square pg 2.png"  alt="song" />
+      </div>
     </label>
   </div>
   <div class="player">
@@ -486,4 +505,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+<script src="/static/js/loader.js">
+</script>
 {% endblock body %}
