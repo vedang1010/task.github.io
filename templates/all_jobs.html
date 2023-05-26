@@ -28,11 +28,11 @@
             <td>{{job.3}}</td>
             <td>{{job.4}}</td>
 
-            {% comment %} {% if job.5 in data %} {% endcomment %}
+            {% if job.0 in data %}
             {% comment %} <td><a class="btn btn-success">Applied</a></td> {% endcomment %}
-            {% comment %} {% else %} {% endcomment %}
-            <td><a href="/job_detail/{{job.id}}/" class="btn btn-success">Apply</a></td>
-            {% comment %} {% endif %} {% endcomment %}
+            {% else %}
+            <td><a href="/job_detail/{{job.0}}/" class="btn btn-success">Apply</a></td>
+            {% endif %}
         </tr>
 
         {% endfor %}

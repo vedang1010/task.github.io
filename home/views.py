@@ -410,6 +410,7 @@ def user_login(request):
             return redirect('user_homepage')
     return render(request,'user_login.html')
 list2=[]
+list3=[]
 a4=''
 b4=''
 c4=''
@@ -466,8 +467,25 @@ def job_apply(request):
 
 def all_jobs(request):
     # print(jobs)
-    return render(request, "all_jobs.html",{'jobs':list2})
+    global t5,list3
+    t5=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
+    cursor=t5.cursor()
+    query="select id from interns where username='{}'"
+    cursor.execute(query.format(a5))
+    data =tuple(cursor.fetchall())
+    list3.append(data)
+    list3=[]
+
+    return render(request, "all_jobs.html",{'jobs':list2,'data':data})
 
 def job_detail(request):
     return render(request,'job_detail.html')
 
+def partners(request):
+    return render(request,'partners.html')
+
+def alumni(request):
+    return render(request,'alumni.html')
+
+def investor(request):
+    return render(request,'investor.html')

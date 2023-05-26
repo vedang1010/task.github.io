@@ -1,0 +1,399 @@
+{% extends 'base.html' %} {% block links %}
+
+
+{% endblock links %} {% block css %}
+<link rel="stylesheet" href="/static/styles/navbar.css">
+<link rel="stylesheet" href="/static/styles/alumni.css">
+<link rel="stylesheet" href="/static/styles/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+{% endblock css %} <style>
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .title {
+        -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
+
+    @-webkit-keyframes tracking-in-expand {
+        0% {
+            letter-spacing: -0.5em;
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes tracking-in-expand {
+        0% {
+            letter-spacing: -0.5em;
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: 820px) {
+        .style {
+            font-size: 20px;
+        }
+
+        .style1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .style2 {
+            font-size: medium;
+            margin-top: 32px;
+        }
+    }
+
+    /* @media screen and (max-width: 1200px) {
+        #pvt {
+            font-size: 20px;
+        }
+
+    } */
+</style>{%block js %}
+
+{% endblock js %} {% block extra %} {% endblock extra %} {% block body %}
+{% comment %} {% block top %}0px{% endblock top %} {% endcomment %}
+
+<div class="container">
+
+
+    <div class="title" style="opacity: 1; margin-top: 50px; font-family: metropolis; color: lightsteelblue;">Any
+        institution's Alumni are key to it's growth!</div>
+    <div class="l-container">
+
+        <div class="box5">
+            <div class="b-game-card" style="--b-game-card:5" data-aos="zoom-in">
+                <div class="child">
+                    <!-- <section class="alumni_list"> -->
+                    <span class="head"
+                        style="padding-top:9px;padding-bottom:10px;z-index: 100; font-family: league_spartan;font-size: 1.75rem;">Platinum
+                        Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular; ">
+                        <span class="name" style="margin: 0rem; padding:0rem; "><img src="/static/images/alumni/Nichem.png"
+                                alt=""
+                                style="width:8rem;height: auto;padding: 0;margin-bottom: -10%; overflow: hidden;scale: 1.25;">
+                        </span><br>
+                        <span class="name" style="margin: 0rem; padding:0rem; "><img
+                                src="/static/images/alumni/sanjeev.png" alt=""
+                                style="width:6rem;height: auto; padding: 0rem; overflow: hidden;margin-bottom: -10%;scale: 1.5;">
+                        </span><br>
+                        <span class="name" style="margin: 0rem; padding:0rem;"><img
+                                src="/static/images/alumni/Weikfield.png" alt=""
+                                style="width:6rem;height: auto;padding: 0rem; overflow: hidden;margin-bottom: 2%;scale: 1.5;">
+                        </span><br>
+                        <span class="name"
+                            style="font-family: metropolis-regular;padding-left: 15px; font-size: 23px;"><b>COEP Atlanta
+                                Chapter</b>
+                        </span><br>
+                        <!-- </section> -->
+                    </section>
+                    <!-- </div> -->
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+
+
+        <div class="box1">
+            <div class="b-game-card " style="--b-game-card:5" data-aos="zoom-in">
+                <div class="child">
+                    <span class="head" style="padding-top:5px; font-family: league_spartan;">Gold Alumni
+                        Sponsor</span>
+                    <section class="alumni_list">
+                        <span class="name" style="font-family: metropolis-regular; font-size: 23px;">Akshaya Kamath
+                        </span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="box2" data-aos="flip-down">
+            <div class="b-game-card" style="--b-game-card:5" data-aos="zoom-in">
+                <div class="child">
+
+                    <span class="head" style="padding-top:5px;z-index: 100; font-family: league_spartan;">Silver
+                        Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span class="name">Pratham Technologies Pvt Ltd</span><br>
+                        <span class="name">PSF First Edition Team</span><br>
+                        <span class="name">Tanmay Srivastava</span><br>
+                        <span class="name">Twin Engineers Pvt Ltd</span><br>
+                        <span class="name">World Beyond (Metaverse)</span><br>
+
+                    </section>
+
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+        <div class="box3">
+
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-right">
+                <div class="child" >
+                    <span class="head" style="font-family: league_spartan;">Bronze Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Amit Subhedar </span><br>
+                        <span>Bhagwan Bhonde</span><br>
+                        <span>Brijesh Agnani</span><br>
+                        <span id="pvt">IQS Engineering Solutions PVT LTD </span><br>
+                        <span>Jayant Kurkure </span><br>
+                        <span>Narendra Brahme</span><br>
+                        <span>Natraj Moulds </span><br>
+
+
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-left">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">Bronze Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span id="pvt">Netwin Systems & Software (I) PVT LTD</span><br>
+                        <span>Rahul Pitke</span> <br>
+                        <span>Sunil Bhalerao </span><br>
+                        <!-- <span>Sandeep Deshmukh </span><br> -->
+                        <span>Satish Tikhe</span><br>
+                        <span>Shrikant Iyenger</span><br>
+                        <span>Srinand Iyenger</span><br>
+                        <span>Upendra Sovani</span><br>
+                        <span>Tanmay Srivastava</span><br>
+                        <!-- <span></span><br> -->
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+        <div class="box4">
+
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-right">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">GENERAL SPONSORS</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Ajay Bhat</span><br>
+                        <span>Chinmay Dharmadhikari</span><br>
+                        <span>Dattatray Kulkarni</span><br>
+                        <span>Deepak Chitnis</span><br>
+                        <span>Hari Natrajan</span><br>
+                        <span>Harshal Rode </span><br>
+                        <span>Innovative Vastuniramn Private Limited</span><br>
+                        <span>Jayprakash Bhadbhade</span><br>
+                        <span>Kapil Arora</span><br>
+                        <span>Ketan Shelke</span><br>
+                        <span>Lomesh Patil</span><br>
+
+                    </section>
+                </div>
+                <!-- <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div> -->
+            </div>
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-left">
+                <div class="child" >
+                    <span class="head" style="font-family: league_spartan;">GENERAL SPONSORS</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Neeraj Gaikwad</span><br>
+                        <span>Nitin Kate</span><br>
+                        <span>Reshma Pawar</span><br>
+                        <span>Riddhi Ghate</span><br>
+                        <span>Rohit Kanaglekar</span><br>
+                        <span>Santosh Kulkarni</span><br>
+                        <span>Sameer Mardhekar</span><br>
+                        <span>Sharang Telkikar</span><br>
+                        <span>Siddharth Godbole</span><br>
+                        <span>Vilas Tawde</span><br>
+
+
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="title"
+        style="opacity: 1; margin-top: 50px;margin-bottom: 30px; font-family: metropolis; color: lightsteelblue;">
+        Past Alumni</div>
+    <div class="l-container">
+        <div class="box1">
+            <div class="b-game-card " style="--b-game-card:5;" data-aos="zoom-in">
+                <div class="child cardd">
+                    <span class="head" style="padding-top:5px; font-family: league_spartan;">Gold Alumni
+                        Sponsor</span>
+                    <section class="alumni_list">
+                        <span class="name" style="font-family: metropolis-regular; font-size: 23px;">Datta
+                            Deshpande</span>
+                        <span class="name" style="font-family: metropolis-regular; font-size: 23px;">Pratham
+                            Technologies</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="box2" data-aos="flip-down" style="margin-bottom: -45px;">
+            <div class="b-game-card" style="--b-game-card:5" data-aos="zoom-in">
+                <div class="child">
+                    <!-- <section class="alumni_list"> -->
+                    <span class="head" style="padding-top:5px;z-index: 100; font-family: league_spartan;">Silver
+                        Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span class="name">Dinesh Kundale </span><br>
+                        <span class="name">Pradeep Bhalwankar </span>
+                        <!-- </section> -->
+                    </section>
+                    <!-- </div> -->
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+        <div class="box3">
+
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-right">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">Bronze Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Ajit Kumar </span><br>
+                        <span>Kirti Rathod </span><br>
+                        <span>Mukesh Malhotra</span><br>
+                        <span>Pradip Savase</span><br>
+                        <span>PSF-First Edition Team</span><br>
+
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-left">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">Bronze Alumni Sponsor</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Power Technics Infosolutions</span><br>
+                        <span>Raju Khadgi</span><br>
+                        <span>Sharang Telkikar</span><br>
+                        <span>Siddharth Godbole</span><br>
+                        <span>Upendra Sovani</span><br>
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+        <div class="box4">
+
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-right">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">GENERAL SPONSORS</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span>Alok Marathe</span><br>
+                        <span>Anumita Ray</span><br>
+                        <span>Apurva Chatare</span><br>
+                        <span>Charushila Wakhare</span><br>
+                        <span>Chetan Malhotra</span><br>
+                        <span>Dattatraya Kulkarni</span><br>
+                        <span>Jayant Thatte</span><br>
+                        <span>Jayprakash Bhadbhade</span><br>
+                        <span>Madhav Ranade</span><br>
+                    </section>
+                </div>
+                <!-- <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div> -->
+            </div>
+            <div class="b-game-card" style="--b-game-card:5" data-aos="fade-left">
+                <div class="child">
+                    <span class="head" style="font-family: league_spartan;">GENERAL SPONSORS</span>
+                    <section class="alumni_list" style="font-family: metropolis-regular;">
+                        <span> Mayur Dattaraya</span><br>
+                        <span>Nayantara Tiwari</span><br>
+                        <span>Nitin Kate</span><br>
+                        <span>Prasad Gosavi</span><br>
+                        <span>Prasad Yelgodkar</span><br>
+                        <span> Shivam Agrawal</span><br>
+                        <span>Shripadraj Ponkshe</span><br>
+                        <span>Vikas Shinde</span><br>
+                        <span></span><br>
+                    </section>
+                </div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+<script src="./js/play.js"></script>
+
+<!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1500,
+    })
+</script>
+<script>
+    VANTA.WAVES({
+        el: "#my-background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+
+{% endblock body %}
