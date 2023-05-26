@@ -6,7 +6,7 @@
     <title>Pune Startup Fest'23</title>
    {% block links %}{% endblock links %} {% block css %}{%endblock css %} {%block js %}{% endblock js %}
     <style>
-      #loading-bar {
+      {% comment %} #loading-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -20,6 +20,38 @@
         background-color: #4caf50;
         width: 0;
         transition: width 0.3s ease-in-out;
+      } {% endcomment %}
+
+      .loader{
+        background-color: #000;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        top:0;
+        z-index: 887;
+        display: flex;
+        {% comment %} align-items: flex-end; {% endcomment %}
+      }
+      .progress-bar{
+        width: 0;
+        height: 5px;
+        background:linear-gradient(40deg,rgb(109,163,152) 0%,rgb(176,118,179) 80%,rgb(176,118,179) 145%,rgb(176, 118, 179)100%);
+        transition: 0.2s linear;
+        display: flex;
+        justify-content: flex-end;
+        transform: translateY(0);
+      }
+      {% comment %} span .number-count{
+          font-size: 130px;
+          color: #fff;
+          padding-right: 50px;
+      } {% endcomment %}
+      .height-0{
+        transform: translateY(-100%);
+      }
+      .hide-loader{
+        display: none;
       }
     </style>
   </head>
@@ -29,9 +61,16 @@
     data-home-page-title="Page 13"
     class="u-body u-xl-mode"
     style="background-color: #0c0624">
-    <div id="loading-bar">
+    {% comment %} <div id="loading-bar">
       <div id="loading-progress"></div>
+    </div> {% endcomment %}
+    <div class="loader" id ="loader">
+      <div class="progress-bar" id="myProgressBar">
+        {% comment %} <span class="number-count" id=""incrementpercentage>0%</span> {% endcomment %}
+      </div>
     </div>
+
+
     <div
       id="my-background"
       style="
@@ -65,6 +104,17 @@
     <div class="menu">
       <div class="menu-inner">
         <ul class="menu-nav">
+          <li class="menu-nav-item">
+            {%if username%}
+            <span style="z-index:200;color:white;">
+                <div>
+                  {% comment %} <i class="fa-solid fa-house" style="padding-right: 1rem"></i> {% endcomment %}
+                  <h3>You are logged in as {{username}}<h3>
+                  {% comment %} <h3>Logged in status {{login_status}}<h3> {% endcomment %}
+                </div>
+              </span>
+            {%endif%}
+          </li>
           <li class="menu-nav-item">
             <a class="menu-nav-link" href="/main"
               ><span>
@@ -653,7 +703,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     {% comment %} {% endcomment %}
-    <script>
+    <!-- <script>
       window.addEventListener("load", function () {
         const progressBar = document.getElementById("loading-progress");
         let width = 0;
@@ -673,6 +723,31 @@
           }
         }, 100);
       });
+    </script> -->
+    <script>
+      setTimeout(()=>{
+        let progressBar = document.getElementById("myProgressBar");
+        let barwidth=10;
+        let ab=setInterval(progressFunction,40);
+        function progressFunction(){
+          if(barwidth>=100){
+            clearInterval(ab);
+            setTimeout(()=>{
+              progressBar.classList.add("height-0")
+            },500);
+            setTimeout(()=>{
+              document.getElementById("loader").classList.add("hide-loader")
+            },1000);
+          }
+          else{
+            barwidth++;
+            progressBar.style.width= barwidth+"%";
+            document.getElementById("incrementpercentage").innerHTML=barwidth+"%";
+          }
+        }
+      },1000);
     </script>
   </body>
+  {{redirect_to_login_immediately}}
+
 </html>

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from home import views
 urlpatterns = [
-    path("",views.login,name='home'),
+    path("",views.loginUser,name='home'),
     path("index",views.index,name='index'),
     path("main",views.main,name='main'),
     path("aboutus",views.aboutus,name='aboutus'),
@@ -20,10 +20,10 @@ urlpatterns = [
     path('student_startups',views.student_startups,name="student_startups"),
     path('technical_startups',views.technical_startups,name="technical_startups"),
     path('internship_portal',views.internship_portal,name="internship_portal"),
-    path('company_login',views.company_login,name="company_login"),
-    path('company_signup',views.company_signup,name="company_signup"),
-    path('company_homepage',views.company_homepage,name="company_homepage"),
-    path('add_job',views.add_job,name="add_job"),
-    path('job_list',views.job_list,name="job_list"),
+    path('company_login/',views.company_login,name="company_login"),
+    path('company_signup/',views.company_signup,name="company_signup"),
+    path('company_homepage/',views.company_homepage,name="company_homepage"),
+    path('add_job/',views.add_job,name="add_job"),
+    path('job_list/',views.job_list,name="job_list"),
     path('internship_portal_user',views.internship_portal_user,name="internship_portal_user")
 ]

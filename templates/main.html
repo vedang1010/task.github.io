@@ -10,8 +10,6 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
 />
-<link rel="stylesheet" type="text/css" href="/static/loader.css" />
-
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
@@ -42,16 +40,16 @@
 <link rel="stylesheet" href="/static/styles/footer-new.css" />
 
 <!-- css -->
-{% endblock css %} 
+{% endblock css %}
 {% block js %}
 <!-- js -->
-<script src="/static/js/loader.js">
-</script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <!-- js -->
 {% endblock js %} 
 {% block body %}
-
+{% comment %} {% block username %} {% endcomment %}
+   
+{% comment %} {% endblock username %} {% endcomment %}
 <!-- CAROUSEL START -->
 <div class="container">
   <input type="radio" name="slider" id="item-1" checked />
@@ -59,28 +57,13 @@
   <input type="radio" name="slider" id="item-3" />
   <div class="cards">
     <label class="card" for="item-1" id="song-1">
-      <div class="preloader">
-        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
-      </div>
-      <div class="content hidden" >
-      <img src="/static/images/main/Pitcher's Valley Square.png"  alt="song" />
-      </div>
+      <img src="/static/images/main/Pitcher's Valley Square.png" alt="song" />
     </label>
     <label class="card" for="item-2" id="song-2">
-      <div class="preloader">
-        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
-      </div>
-      <div class="content hidden">
-      <img src="/static/images/main/Ad Boost square.png"  alt="song" />
-      </div>
+      <img src="/static/images/main/Ad Boost square.png" alt="song" />
     </label>
     <label class="card" for="item-3" id="song-3">
-      <div class="preloader">
-        <img src="/static/images/navbarAndFooter/PSF + Marsh White1.png" alt="Logo">
-      </div>
-      <div class="content hidden">
-      <img src="/static/images/main/Ad Boost Square pg 2.png"  alt="song" />
-      </div>
+      <img src="/static/images/main/Ad Boost Square pg 2.png" alt="song" />
     </label>
   </div>
   <div class="player">
@@ -505,6 +488,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
-<script src="/static/js/loader.js">
-</script>
 {% endblock body %}

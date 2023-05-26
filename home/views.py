@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,reverse
 from home.models import Contact
 from datetime import datetime
 from django.contrib.auth.models import User
@@ -9,25 +9,40 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import logout,login
 import mysql.connector as sql
 from django.db import connection
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 def index(request):
+    # if 'login_status' in request.COOKIES and 'username' in request.COOKIES:
+    #     context={
+    #     'username':request.COOKIES['username'],
+    #     'login_status':request.COOKIES.get('login_status'),
+    #     }
+    #     response=render(request,"index.html",context)
     # if not request.user.is_authenticated:
     #     return redirect("/login")
     return render(request,"index.html")
-def login(request):
-    # if not request.user.is_authenticated:
-    #     return redirect("/login")
-    return render(request,"login.html")
+
 
 def main(request):
+    if 'login_status' in request.COOKIES and 'username' in request.COOKIES:
+        context={
+            'username':request.COOKIES['username'],
+            'login_status':request.COOKIES.get('login_status'),
+        }
     # if request.user.is_authenticated:
-    return render(request,"main.html")
+    return render(request,"main.html",context)
     # return redirect("/login")
 
 def aboutus(request):
+    if 'login_status' in request.COOKIES and 'username' in request.COOKIES:
+        context={
+            'username':request.COOKIES['username'],
+            'login_status':request.COOKIES.get('login_status'),
+        }
     # if request.user.is_anonymous:
     #     return redirect("/login")
-    return render(request,'aboutus.html')
+    return render(request,'aboutus.html',context)
 
 def internship_portal(request):
     return render(request,'internship_portal.html')
@@ -64,17 +79,29 @@ def loginUser(request):
 
         c="select * from user where username='{}' and password='{}'".format(un,pwd)
         cursor.execute(c)
+        context={
+            'username':un,
+            'login_status':True,
+        }
+
+
+        response=render(request,'index.html',context)
         t=tuple(cursor.fetchall())
         if t==():
             return render(request,'login.html')
         else:
-            return redirect('/index')
+            response.set_cookie('username',un)
+            response.set_cookie('login_status',True)
+            return response
 
     return render(request,'login.html')
 
 def logoutUser(request):
+    response=HttpResponseRedirect(reverse('login'))
+    response.delete_cookie('username')
+    response.delete_cookie('login_status')
     logout(request)
-    return redirect('/login')
+    return response
 
 fn=''
 ln=''
@@ -84,7 +111,7 @@ cn=''
 gd=''
 # User Register
 def register(request):
-    global un,fn,ln,pd,el,cn,gd
+    # global un,fn,ln,pd,el,cn,gd
     if request.method == "POST":
         m=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
         cursor=m.cursor()
@@ -105,7 +132,7 @@ def register(request):
             if key=="gender":
                 gd=value
 
-        c="insert into user values('{}','{}','{}','{}','{}','{}','{}')".format(un,fn,ln,el,gd,cn,pd)
+        c="insert into user(username,first_name,last_name,email,gender,phone,password) values('{}','{}','{}','{}','{}','{}','{}')".format(un,fn,ln,el,gd,cn,pd)
         cursor.execute(c)
         m.commit()
         # return render(request,'login.html')
@@ -153,6 +180,7 @@ g2=''
 e2=''
 p2=''
 i2=''
+
 def company_login(request):
     global a1,b1,d1,results,f2,l2,c2,g2,e2,p2,i2
     if request.method=="POST":
@@ -282,7 +310,7 @@ def add_job(request):
             #     k=value
 
 
-        k="insert into add_job (job_title,start_date,end_date,experience,salary,skills,company_location,job_description) values('{}','{}','{}','{}','{}','{}','{}','{}')".format(aj1,aj2,aj3,aj4,aj5,aj6,aj7,aj8)
+        k="insert into add_job (job_title,start_date,end_date,experience,salary,skills,company_location,job_description,company_name) values('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(aj1,aj2,aj3,aj4,aj5,aj6,aj7,aj8,c2)
         cursor.execute(k)
         n.commit()
         return render(request, 'add_job.html')
@@ -303,3 +331,22 @@ def job_list(request):
     # jobs = Job.objects.filter(company=companies)
     return render(request, "job_list.html")
     # return render(request, "job_list.html", {'jobs':jobs})
+
+
+# def set_session_data(request):
+#     request.session['username'] = 'john'  # Set session data
+#     return render(request, 'index.html')
+
+# def get_session_data(request):
+#     username = request.session.get('username')  # Retrieve session data
+#     return render(request, 'index.html', {'username': username})
+
+
+# def set_cookie(request):
+#     response = HttpResponse('Cookie has been set')
+#     response.set_cookie('mycookie', 'example value', max_age=3600)  # Set a cookie with a name, value, and optional expiration time
+#     return response
+
+# def get_cookie(request):
+#     cookie_value = request.COOKIES.get('mycookie')  # Retrieve the value of a cookie
+#     return HttpResponse(f'Cookie value: {cookie_value}')
