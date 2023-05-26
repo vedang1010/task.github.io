@@ -45,7 +45,7 @@ def aboutus(request):
     return render(request,'aboutus.html',context)
 
 def internship_portal(request):
-    return render(request,'internship_portal.html')
+    return render(request,'internship_portal_user.html')
 
 def startup_expo(request):
     return render(request,'startup_expo.html')
@@ -165,14 +165,12 @@ def student_startups(request):
     return render(request,'student_startups.html')
 
 def internship_portal_user(request):
-    return render(request,'internship_portal_user.html')
+    return render(request,'internship_portal.html')
 
 a1=''
 b1=''
 d1=''
 query=''
-# results=''
-# values=[]
 f2=''
 l2=''
 c2=''
@@ -180,9 +178,12 @@ g2=''
 e2=''
 p2=''
 i2=''
-
+# l1=()
+id3=''
+jb3=''
+sd3=''
 def company_login(request):
-    global a1,b1,d1,results,f2,l2,c2,g2,e2,p2,i2
+    global a1,b1,d1,results,f2,l2,c2,g2,e2,p2,i2,jobs,job,job1,id3,jb3,sd3,l1
     if request.method=="POST":
         c1=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
         cursor=c1.cursor()
@@ -205,15 +206,31 @@ def company_login(request):
             p2 = row[4]
             g2 = row[5]
             i2 = row[6]
+
+
+
+        query="select id,job_title,start_date from add_job where company_name='{}'"
+        cursor.execute(query.format(c2))
+        jobs =tuple(cursor.fetchall())
+        print(jobs)
+        for job in jobs:
+            new=list(job)
+            if new not in l1:
+                l1.append(new)
+        # jobn=jobs
+
+
         e1="select * from startups where username='{}' and password1='{}'"
         cursor.execute(e1.format(a1,b1))
         t=tuple(cursor.fetchall())
         if t==():
             return render(request,'company_login.html')
         else:
-            return redirect('/company_homepage')
+            return redirect('company_homepage')
 
     return render(request,'company_login.html')
+l1=[]
+# print(l1)
 
 a=''
 b=''
@@ -265,11 +282,12 @@ def company_signup(request):
     return render(request, 'company_signup.html')
 
 def company_homepage(request):
-    for key,value in d1.items():
-        if key=="username":
-            a1=value
-
+    # for key,value in d1.items():
+    #     if key=="username":
+    #         a1=value
     return render(request,'company_homepage.html',{'username': a1, 'company': c2,'firstname':f2,'lastname':l2,'email':e2,'phone':p2,'gender':g2,'img':i2})
+    # return render(request,'company_homepage.html')
+
 
 aj1=''
 aj2=''
@@ -313,40 +331,143 @@ def add_job(request):
         k="insert into add_job (job_title,start_date,end_date,experience,salary,skills,company_location,job_description,company_name) values('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(aj1,aj2,aj3,aj4,aj5,aj6,aj7,aj8,c2)
         cursor.execute(k)
         n.commit()
+        query="select id,job_title,start_date from add_job where company_name='{}'"
+        cursor.execute(query.format(c2))
+        jobs =tuple(cursor.fetchall())
+        print(jobs)
+        for job in jobs:
+            new=list(job)
+            if new not in l1:
+                l1.append(new)
+
         return render(request, 'add_job.html')
         # return render(request, "company_login.html")
     return render(request, 'add_job.html')
 
-def all_jobs(request):
-    jobs = Job.objects.all().order_by('-start_date')
-    applicant = Applicant.objects.get(user=request.user)
-    apply = Application.objects.filter(applicant=applicant)
-    data = []
-    for i in apply:
-        data.append(i.job.id)
-    return render(request, "all_jobs.html", {'jobs':jobs, 'data':data})
-
 def job_list(request):
-    # companies = Company.objects.get(user=request.user)
-    # jobs = Job.objects.filter(company=companies)
-    return render(request, "job_list.html")
+    # l1=list[l1]
+    # list_of_lists = [list(inner_tuple) for inner_tuple in l1]
+    # jobs=[list(job) for job in l1]
+    print(l1)
+    # print(jobs)
+    return render(request, "job_list.html",{'jobs':l1})
     # return render(request, "job_list.html", {'jobs':jobs})
 
+a5=''
+b5=''
+d5=''
+query=''
+f5=''
+l5=''
+c5=''
+g5=''
+e5=''
+p5=''
+i5=''
+t5=''
+k5=''
+def user_login(request):
+    global a5,b5,d5,results,f5,l5,c5,g5,e5,p5,i5,t5,k5,list2
+    if request.method=="POST":
+        t5=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
+        cursor=t5.cursor()
+        d5=request.POST
+        for key,value in d5.items():
+            if key=="username":
+                a5=value
+            if key=="password":
+                b5=value
+            # if key=="status":
+            #     f1=value
+        query="select first_name,last_name,email,phone,gender,image from interns where username='{}'"
+        cursor.execute(query.format(a5))
+        results =tuple(cursor.fetchall())
+        for row in results:
+            f5 = row[0]
+            l5 = row[1]
+            c5 = row[2]
+            e5 = row[3]
+            p5 = row[4]
+            g5 = row[5]
 
-# def set_session_data(request):
-#     request.session['username'] = 'john'  # Set session data
-#     return render(request, 'index.html')
+        query="select company_name,job_title,salary,company_location,start_date from add_job"
+        cursor.execute(query.format(c2))
+        jobs =tuple(cursor.fetchall())
+        print(jobs)
+        for job in jobs:
+            new=list(job)
+            if new not in list2:
+                list2.append(new)
+        # jobn=jobs
 
-# def get_session_data(request):
-#     username = request.session.get('username')  # Retrieve session data
-#     return render(request, 'index.html', {'username': username})
+
+        k5="select * from startups where username='{}' and password1='{}'"
+        cursor.execute(k5.format(a5,b5))
+        t=tuple(cursor.fetchall())
+        if t==():
+            return render(request,'user_login.html')
+        else:
+            return redirect('user_homepage')
+    return render(request,'user_login.html')
+list2=[]
+a4=''
+b4=''
+c4=''
+d4=''
+e4=''
+f4=''
+g4=''
+h4=''
+i4=''
+k4=''
+def user_signup(request):
+    global a4,b4,c4,d4,e4,f4,g4,h4,i4,k4
+    if request.method == "POST":
+        n=sql.connect(host="localhost",user="root",password="Vedu@3105",database='psf')
+        cursor=n.cursor()
+        x=request.POST
+        for key,value in x.items():
+            if key=="username":
+                a4=value
+            if key=="email":
+                b4=value
+
+            if key=="first_name":
+                c4=value
+            if key=="last_name":
+                d4=value
+            if key=="password1":
+                e4=value
+            if key=="password2":
+                f4=value
+            if key=="phone":
+                g4=value
+            if key=="gender":
+                h4=value
+            if key=="image":
+                i4=value
+            # if key=="status":
+            #     k=value
 
 
-# def set_cookie(request):
-#     response = HttpResponse('Cookie has been set')
-#     response.set_cookie('mycookie', 'example value', max_age=3600)  # Set a cookie with a name, value, and optional expiration time
-#     return response
+        k4="insert into interns (username,email,first_name,last_name,password1,password2,phone,gender,image) values('{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(a4,b4,c4,d4,e4,f4,g4,h4,i4)
+        cursor.execute(k4)
+        n.commit()
+        return redirect('user_login')
+    return render(request,'signup.html')
 
-# def get_cookie(request):
-#     cookie_value = request.COOKIES.get('mycookie')  # Retrieve the value of a cookie
-#     return HttpResponse(f'Cookie value: {cookie_value}')
+
+def user_homepage(request):
+    return render(request,'user_homepage.html',{'username': a5, 'firstname':f5,'lastname':l5,'email':c5,'phone':e5,'gender':p5,'img':g5})
+
+def job_apply(request):
+    return render(request,'job_apply.html')
+
+
+def all_jobs(request):
+    # print(jobs)
+    return render(request, "all_jobs.html",{'jobs':list2})
+
+def job_detail(request):
+    return render(request,'job_detail.html')
+

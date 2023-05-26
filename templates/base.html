@@ -22,7 +22,7 @@
         transition: width 0.3s ease-in-out;
       } {% endcomment %}
 
-      .loader{
+      .loader2{
         background-color: #000;
         position: fixed;
         left: 0;
@@ -64,7 +64,7 @@
     {% comment %} <div id="loading-bar">
       <div id="loading-progress"></div>
     </div> {% endcomment %}
-    <div class="loader" id ="loader">
+    <div class="loader2" id ="loader2">
       <div class="progress-bar" id="myProgressBar">
         {% comment %} <span class="number-count" id=""incrementpercentage>0%</span> {% endcomment %}
       </div>
@@ -730,14 +730,14 @@
         let barwidth=10;
         let ab=setInterval(progressFunction,40);
         function progressFunction(){
-          if(barwidth>=100){
+          if(barwidth>=90){
             clearInterval(ab);
             setTimeout(()=>{
               progressBar.classList.add("height-0")
             },500);
             setTimeout(()=>{
-              document.getElementById("loader").classList.add("hide-loader")
-            },1000);
+              document.getElementById("loader2").classList.add("hide-loader")
+            },100);
           }
           else{
             barwidth++;

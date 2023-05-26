@@ -17,7 +17,43 @@
   <link rel="stylesheet" href="/static/styles/footer.css">
   <link rel="stylesheet" href="/static/styles/navbar.css">
   {% endblock links %} 
+  {% block css %}
+  <style>
+    .choose_your_profession{
+      height: 300px;
+      width: 400px;
+      position: relative;
+      align-items: center;
+      border: 5
+      px solid red;
+      display: grid;
+      justify-content: center;
+      margin:auto;
+      text-align: center;
+      color: whitesmoke;
+    }
+    .choose{
+      display:grid;
+      justify-content: center;
+      align-items:center;
+      grid-template-columns: auto auto;
+      grid-gap:40px;
+    }
+    .profession{
+      {% comment %} width:50%; {% endcomment %}
+      border:3px solid green;
+      width: 100px;
+      text-align: center;
+    }
+    </style>
+  {%endblock css %} 
+  
+  
+  {%block js %}
+  
+  {% endblock js %}
 {% block body %}
+
 {% comment %} {% block top %}0px{% endblock top %} {% endcomment %}
 
 {% comment %} <body class="stop-scroll" style="background-color: #0c0624;">
@@ -29,6 +65,17 @@
 
   <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
   <section>
+    <div class="choose_your_profession">
+      <b>Choose your profession</b>
+      <div class="choose">
+        <div class="profession">
+          <b><a style="color:white;" href="./company_login">StartUp</a></b>
+        </div>
+        <div class="profession">
+          <b><a style="color:white;" href="./user_login">Intern</a></b>
+        </div>
+      </div>
+    </div>
     <!-- StartUp Zones -->
     <div class="carding" style="margin-top:3%;">
       <div class="a" style="font-family: league_spartan;">

@@ -24,6 +24,14 @@ urlpatterns = [
     path('company_signup/',views.company_signup,name="company_signup"),
     path('company_homepage/',views.company_homepage,name="company_homepage"),
     path('add_job/',views.add_job,name="add_job"),
+
+    path('user_login/',views.user_login,name="user_login"),
+    path('user_signup/',views.user_signup,name="user_signup"),
+    path('user_homepage/',views.user_homepage,name="user_homepage"),
+    path('job_apply/',views.job_apply,name="job_apply"),
+    path('all_jobs/',views.all_jobs,name="all_jobs"),
+    path('job_detail/',views.job_detail,name="job_detail"),
+
     path('job_list/',views.job_list,name="job_list"),
     path('internship_portal_user',views.internship_portal_user,name="internship_portal_user")
 ]
